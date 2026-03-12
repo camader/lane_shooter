@@ -1,6 +1,11 @@
 name: "godot to github pages"
 on: push
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 env:
   GODOT_VERSION: 4.6
   EXPORT_NAME: lane_shooter
