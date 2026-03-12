@@ -1,0 +1,96 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1")
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 1270.0
+offset_bottom = 30.0
+
+[node name="ScoreLabel" type="Label" parent="TopBar"]
+custom_minimum_size = Vector2(200, 0)
+text = "Score: 0"
+
+[node name="MinionsLabel" type="Label" parent="TopBar"]
+custom_minimum_size = Vector2(200, 0)
+text = "Minions: 0"
+
+[node name="BossesLabel" type="Label" parent="TopBar"]
+custom_minimum_size = Vector2(200, 0)
+text = "Bosses: 0"
+
+[node name="PowerPanel" type="PanelContainer" parent="."]
+offset_left = 10.0
+offset_top = 620.0
+offset_right = 320.0
+offset_bottom = 715.0
+
+[node name="VBox" type="VBoxContainer" parent="PowerPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 306.0
+offset_bottom = 91.0
+
+[node name="DmgRow" type="HBoxContainer" parent="PowerPanel/VBox"]
+layout_mode = 2
+
+[node name="DmgLabel" type="Label" parent="PowerPanel/VBox/DmgRow"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "DMG: 1"
+theme_override_colors/font_color = Color(1, 0.3, 0.1, 1)
+
+[node name="DmgBarBG" type="ColorRect" parent="PowerPanel/VBox/DmgRow"]
+custom_minimum_size = Vector2(180, 12)
+layout_mode = 2
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="DmgBarFill" type="ColorRect" parent="PowerPanel/VBox/DmgRow/DmgBarBG"]
+offset_right = 12.0
+offset_bottom = 12.0
+color = Color(1, 0.3, 0.1, 1)
+
+[node name="RateRow" type="HBoxContainer" parent="PowerPanel/VBox"]
+layout_mode = 2
+
+[node name="RateLabel" type="Label" parent="PowerPanel/VBox/RateRow"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "RATE: 2.5/s"
+theme_override_colors/font_color = Color(1, 0.8, 0, 1)
+
+[node name="RateBarBG" type="ColorRect" parent="PowerPanel/VBox/RateRow"]
+custom_minimum_size = Vector2(180, 12)
+layout_mode = 2
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="RateBarFill" type="ColorRect" parent="PowerPanel/VBox/RateRow/RateBarBG"]
+offset_right = 4.0
+offset_bottom = 12.0
+color = Color(1, 0.8, 0, 1)
+
+[node name="ShotRow" type="HBoxContainer" parent="PowerPanel/VBox"]
+layout_mode = 2
+
+[node name="ShotLabel" type="Label" parent="PowerPanel/VBox/ShotRow"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "SHOTS: 1"
+theme_override_colors/font_color = Color(0, 0.5, 1, 1)
+
+[node name="ShotBarBG" type="ColorRect" parent="PowerPanel/VBox/ShotRow"]
+custom_minimum_size = Vector2(180, 12)
+layout_mode = 2
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="ShotBarFill" type="ColorRect" parent="PowerPanel/VBox/ShotRow/ShotBarBG"]
+offset_right = 26.0
+offset_bottom = 12.0
+color = Color(0, 0.5, 1, 1)
